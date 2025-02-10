@@ -41,13 +41,25 @@ while True:
                 print(usu1.lista_por_id(chave_user))
 
         elif opcao_user == 3:
-            pass
+            for i in usu1.listar():
+                print(i)
+
+            id = int(input("\nDigite a chave (id) que deseja atualizar: "))
+            nome = input("Nome: ")
+            cpf = input("CPF: ")
+            email = input("Email: ")
+            senha = input("Senha: ")
+            atualizada_user = [id, nome, cpf, email, senha]
+            usu1.atualizar(atualizada_user)
 
         elif opcao_user == 4:
             deletar_user = int(input("\nDigite a chave do usuário para deletar: "))
             usu1.excluir(deletar_user)
 
-    if opcao == 2:
+        else:
+            print("Erro!. Por favor, digite o número de acordo com o menu.")
+
+    elif opcao == 2:
         print("\n", "Você está no produto", "", sep="___")
         print("O que gostaria de executar?")
         print("1 - Cadastrar")
@@ -58,7 +70,7 @@ while True:
 
         if opcao_produto == 1:
             prod1.nome = input("\nDigite o nome do produto: ")
-            prod1.descricao = input("Digite a descrção do produto: ")
+            prod1.descricao = input("Digite a descrição do produto: ")
             prod1.marca = input("Digite a marca do produto: ")
             prod1.modelo = input("Digite o modelo do produto: ")
             prod1.preco = input("Digite o preço do produto: ")
@@ -81,11 +93,27 @@ while True:
                 print(prod1.listar_por_idprod(chave_prod))
 
         elif opcao_produto == 3:
-            pass
+            for i in prod1.listar_prod():
+                print(i)
+
+            id_prod = int(input("\nDigite a chave (id) que deseja atualizar: "))
+            nome = input("Nome: ")
+            descricao = input("Descrição: ")
+            marca = input("Marca: ")
+            modelo = input("Modelo: ")
+            preco = float(input("Preco: "))
+            qte = int(input("Quantidade: "))
+            cor = input("Cor: ")
+            peso = input("Peso: ")
+            atualizada_prod = [id_prod, nome, descricao, marca, modelo, preco, qte, cor, peso]
+            prod1.atualizar_prod(atualizada_prod)
 
         elif opcao_produto == 4:
             deletar_prod = int(input("\nDigite a chave do produto para deletar: "))
             prod1.excluir_prod(deletar_prod)
+
+        else:
+            print("Erro!. Por favor, digite o número de acordo com o menu.")
 
     else:
         print("Erro!. Por favor, digite o número de acordo com o menu.")
