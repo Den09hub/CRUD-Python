@@ -143,7 +143,7 @@ class Database:
                                 qte = {indice[6]},
                                 cor = '{indice[7]}',
                                 peso = '{indice[8]}'
-                                WHERE id_prod {indice[0]}
+                                WHERE id_prod = {indice[0]}
                                 """)
             self.conn.commit()
             return True
